@@ -7,15 +7,26 @@ var logger = require('morgan');
 // Database
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/efarm2');
+// var db = monk('localhost:27017/efarm2');
+var MongoClient = mongodb.MongoClient;
+var url = process.env.MONGOLAB_URI;
 
+MongoClient.connect(url, function(err, datab) {
+	if (err) {
+		console.log('Unable to connect to the mongoDB server.  Error:', err);
+	} else {
+		console.log('Connection established to', url);
+		// make our db accessible to our router
+		app.use(function(req,res,next){
+			req.db = db;
+			next();
+		});
+		datab.close;
+	}
+})
 var app = express();
 
-// make our db accessible to our router
-app.use(function(req,res,next){
-	req.db = db;
-	next();
-});
+
 
 var indexRouter = require('./routes/index');
 var equipmentRouter = require('./routes/equipment');
