@@ -1,0 +1,33 @@
+extends layout
+
+block content
+	h1= title
+	p Welcome to E-Farms newest competitor!
+
+	#wrapper
+		#equipmentInfo
+			h2 Equipment Info
+			p
+				strong Color: 
+				| <span id='equipmentInfoColor'></span>
+				br
+				strong Make: 
+				| <span id='equipmentInfoMake'
+
+		h2 Equipment List
+			#equipmentList
+				table
+					thead
+						th EquipmentName
+						th Color
+						th Delete?
+					tbody
+
+		h2 Add Equipment
+			#addEquipment
+				fieldset
+					input#inputEquipmentType(type='text', placeholder='Equipment Type')
+					input#inputEquipmentColor(type='text', placeholder='Color')
+					input#inputEquipmentMake(type='text', placeholder='Make')
+					br
+					button#btnAddEquipment Add Equipment
