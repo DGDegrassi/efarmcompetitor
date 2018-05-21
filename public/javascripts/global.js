@@ -31,7 +31,7 @@ function populateTable() {
 		$.each(data, function(){
 			tableContent += '<tr>';
 			tableContent += '<td><a href="#" class="linkshowequipment" rel="' + this.equipmentname + '">' + this.equipmentname + '</a></td>';
-      		tableContent += '<td>' + this.color + '</td>';
+
      		tableContent += '<td><a href="#" class="linkdeleteequipment" rel="' + this._id + '">delete</a></td>';
       		tableContent += '</tr>';
 		});

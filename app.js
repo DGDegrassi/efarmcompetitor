@@ -6,23 +6,9 @@ var logger = require('morgan');
 
 // Database
 var url = process.env.MONGOLAB_URI;
-console.log(url);
 var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk(url);
-// var MongoClient = mongodb.MongoClient;
-// var url = process.env.MONGOLAB_URI;
-
-// MongoClient.connect(url, function(err, datab) {
-// 	if (err) {
-// 		console.log('Unable to connect to the mongoDB server.  Error:', err);
-// 	} else {
-// 		console.log('Connection established to', url);
-// 		// make our db accessible to our router
-
-// 		datab.close;
-// 	}
-// })
 
 var app = express();
 

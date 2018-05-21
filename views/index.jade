@@ -1,8 +1,9 @@
 extends layout
 
 block content
-	h1= title
-	p Welcome to E-Farms newest competitor!
+	#top
+		h1 E-Farminator
+		p E-Farms newest competitor!
 
 	#wrapper
 		#equipmentInfo
@@ -14,14 +15,14 @@ block content
 				strong Make: 
 				| <span id='equipmentInfoMake'
 
-		h2 Equipment List
-			#equipmentList
-				table
-					thead
-						th EquipmentName
-						th Color
-						th Delete?
-					tbody
+		#equipmentlisting
+			h2 Equipment List
+				#equipmentList
+					table
+						thead
+							th Equipment
+							th Delete?
+						tbody
 
 		h2 Add Equipment
 			#addEquipment
