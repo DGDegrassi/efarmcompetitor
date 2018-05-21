@@ -6,7 +6,6 @@ var logger = require('morgan');
 
 // Database
 var url = process.env.MONGOLAB_URI;
-console.log(url);
 var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk(url);
