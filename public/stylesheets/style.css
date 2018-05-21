@@ -64,7 +64,9 @@ table {
 		background:rgba(80,120,255,0.05);
 
 	}
-
+#aE {
+	margin-top:30px;
+}
 #addEquipment {
 	margin-top:15px;
 }
