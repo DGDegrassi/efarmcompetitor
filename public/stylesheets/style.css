@@ -20,6 +20,8 @@ table {
 #wrapper {
 /*	padding-left:312px;*/
 	position:relative;
+	border-color:green;
+	border:5px;
 }
 
 #top {
@@ -68,9 +70,16 @@ a {
 }
 
 th {
-	font-size:20px;
+	font-size:16px;
 }
 fieldset {
 	border:0;
 	padding:0; margin:0;
+}
+
+button {
+	background-color:orange;
+}
+input, button {
+	font-size:16px;
 }
