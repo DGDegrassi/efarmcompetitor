@@ -5,28 +5,31 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 // Database
+var url = process.env.MONGOLAB_URI;
+console.log(url);
 var mongo = require('mongodb');
 var monk = require('monk');
-// var db = monk('localhost:27017/efarm2');
-var MongoClient = mongodb.MongoClient;
-var url = process.env.MONGOLAB_URI;
+var db = monk(url);
+// var MongoClient = mongodb.MongoClient;
+// var url = process.env.MONGOLAB_URI;
 
-MongoClient.connect(url, function(err, datab) {
-	if (err) {
-		console.log('Unable to connect to the mongoDB server.  Error:', err);
-	} else {
-		console.log('Connection established to', url);
-		// make our db accessible to our router
-		app.use(function(req,res,next){
-			req.db = db;
-			next();
-		});
-		datab.close;
-	}
-})
+// MongoClient.connect(url, function(err, datab) {
+// 	if (err) {
+// 		console.log('Unable to connect to the mongoDB server.  Error:', err);
+// 	} else {
+// 		console.log('Connection established to', url);
+// 		// make our db accessible to our router
+
+// 		datab.close;
+// 	}
+// })
+
 var app = express();
 
-
+app.use(function(req,res,next){
+	req.db = db;
+	next();
+});
 
 var indexRouter = require('./routes/index');
 var equipmentRouter = require('./routes/equipment');
