@@ -8,7 +8,7 @@ var logger = require('morgan');
 var url = process.env.MONGOLAB_URI;
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk(url);
+var db = monk('localhost:27017/efarm2');
 
 var app = express();
 
